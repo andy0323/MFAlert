@@ -1,0 +1,41 @@
+#!/bin/bash
+
+#to UIAlertView
+SOURCE_CONTENT="MFAlertView"
+REPLACE_CONTENT="UIAlertView"
+
+ARGS=$*
+ARGS_LENGTH=$#
+
+# Helper
+function echo_usage() {
+  echo "Usage: mf_replacer \${file}"
+}
+
+# Replace Files
+function read_dir(){
+  for file in `ls $1`
+  do
+    if [ -d $1"/"$file ];then
+      read_dir $1"/"$file
+    else
+      file_name=$file
+      file_path=$1"/"$file
+      if [[ "$file_name" =~ ".h" ]] || [[ "$file_name" =~ ".m" ]];then
+        sed -i "" "s/${SOURCE_CONTENT}/${REPLACE_CONTENT}/g" $file_path
+      fi
+    fi
+  done
+}
+
+if [ $ARGS_LENGTH -eq 0 ]
+then 
+  echo_usage
+else
+  if [[ -f $ARGS ]]; then
+    sed -i "" "s/${SOURCE_CONTENT}/${REPLACE_CONTENT}/g" ${ARGS}
+  else
+    read_dir ${ARGS}    
+  fi
+fi
+
