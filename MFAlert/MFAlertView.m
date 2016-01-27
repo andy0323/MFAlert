@@ -9,7 +9,7 @@
 #import "MFAlertView.h"
 #import "MFAlertController.h"
 
-#define MF_ALERT_IS_IOS9 !([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
+#define MF_ALERT_IS_IOS9 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
 
 @interface MFAlertView ()<UIAlertViewDelegate>
 @property (nonatomic, assign) NSInteger buttonPressedIndex;

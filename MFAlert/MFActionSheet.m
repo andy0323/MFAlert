@@ -9,7 +9,7 @@
 #import "MFActionSheet.h"
 #import "MFAlertController.h"
 
-#define MF_SHEET_IS_IOS9 !([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
+#define MF_SHEET_IS_IOS9 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
 
 @interface MFActionSheet ()<UIActionSheetDelegate>
 @property (nonatomic, assign) NSInteger buttonPressedIndex;
