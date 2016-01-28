@@ -11,6 +11,9 @@
 
 #define MF_ALERT_IS_IOS9 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Wdeprecated-declarations"
+
 @interface MFAlertView ()<UIAlertViewDelegate>
 @property (nonatomic, assign) NSInteger buttonPressedIndex;
 @property (nonatomic, strong) UIAlertView *alertView;
@@ -296,3 +299,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -48,7 +48,7 @@
 @end
 
 @protocol MFActionSheetDelegate <NSObject>
-
+@optional
 /// 警告框按钮点击回调
 - (void)actionSheet:(MFActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
 

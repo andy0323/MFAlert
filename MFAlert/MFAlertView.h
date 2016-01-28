@@ -59,7 +59,7 @@ typedef NS_ENUM(NSInteger, MFAlertViewStyle) {
 @end
 
 @protocol MFAlertViewDelegate <NSObject>
-
+@optional
 /// 警告框按钮点击回调
 - (void)alertView:(MFAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 

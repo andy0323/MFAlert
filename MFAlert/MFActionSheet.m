@@ -11,6 +11,9 @@
 
 #define MF_SHEET_IS_IOS9 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Wdeprecated-declarations"
+
 @interface MFActionSheet ()<UIActionSheetDelegate>
 @property (nonatomic, assign) NSInteger buttonPressedIndex;
 @property (nonatomic, strong) UIActionSheet *actionSheet;
@@ -201,3 +204,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop
